@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg, rgb(71, 77, 96), rgb(52, 69, 125), rgb(8, 20, 58))
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    height: 100%;
+    
+
+
+}
+
+.img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 20em;
+    box-shadow:rgb(229, 231, 235);
+    
+}
+
+.popupSection{
+ background-color: rgb(8, 17, 31);   
+ border-radius: 1em;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ z-index: 1;
+ top:50%;
+ left:50%;
+ transform: translate(-50%, -50%);
+ width: 40%;
+ height: 40%;
+ box-shadow: 5px, 10px, rgb(229, 231, 235);
+ 
+}
+
+.popH1{
+    color: rgb(209, 209, 244);
+    position: absolute;
+    z-index: 1;
+    top:20%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.inputContainer {
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.button{
+    position: absolute;
+    top:180%;
+    left: -3%;
+    width: 3.8em;
+    border: none;
+    outline: none;
+    padding: .5em;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    text-transform: lowercase;
+    color: #bf46d7;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+    transition: all 1s;
+    overflow: hidden;
+    
+    /* position: absolute;
+    top:160%;
+    left: -3%;
+    display: inline-block;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 1em;
+    color: #bf65e6;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    background-color: transparent;
+    border: none; */
+}
+.button:hover{
+    color: rgb(209, 209, 244);
+} 
+
+.button:hover span {
+  opacity: 0;
+}
+
+.button span{
+    position: absolute;
+    display: block;
+}
+.button span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4,  #bf65e6);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+
+.button span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4,  #bf65e6);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+
+.button span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4,  #bf65e6);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.button span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4,  #bf65e6);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+.input{
+    padding: 1em;
+    outline: none;
+    border-width: 0 0 2px;
+    border-color: rgb(183, 199, 230);
+    background-color: transparent;
+    color: rgb(183, 199, 230);
+    
+
+}
+
+.input:focus{
+    border-color: rgb(214, 224, 242);
+}
+
+
+
+.label {
+        font-family: 'Montserrat', sans-serif;
+		font-size: 1em;
+		color: rgb(214, 224, 242);
+		position: absolute;
+		pointer-events: none;
+		top: 9px;
+		left: 12px;
+		transition: all 0.1s ease;        
+	}
+
+	input:focus ~ .label,
+	input:not(:focus):valid ~ .label {
+		top: -15px;
+		bottom: 0px;
+		left: 0px;
+		font-size: 13px;
+		opacity: 1;
+		color: #bf46d7;
+	}
+
+    .button:before {
+        content: '';
+        background: linear-gradient(45deg, #bf65e6, #4f216f, #b54be3, #3ef7f4, #00ffd5, #da21b5, #7a00ff, #ff00c8, #ed168c);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+    
+    .button:active {
+        color: rgb(183, 199, 230);
+    }
+    
+    .button:active:after {
+        background: transparent;
+        
+    }
+    
+    .button:hover:before {
+        opacity: .6;
+        
+    }
+
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
