@@ -19,5 +19,8 @@
   "homepage": "https://github.com/kayzersozee/ask-name#readme",
   "dependencies": {
     "npm": "^7.24.0"
+  },
+  "devDependencies": {
+    "surge": "^0.23.0"
   }
 }

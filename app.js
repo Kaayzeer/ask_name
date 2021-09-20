@@ -1,5 +1,5 @@
 let popup = document.querySelector('#popupId')
-
+let img = document.querySelector('.img')
 let button = document.querySelector('#inputBtn')
 
 let imgDiv = document.querySelector('#imgDiv')
@@ -39,8 +39,8 @@ const createChild = (name) => {
 button.addEventListener("click", (e) => {           // eventListener that targets the button
   e.preventDefault()
   let inputName = e.target.form[0].value;           // the input fields value
-            
-  if (inputName) {                                    //if the value of the input field is truthy 
+  img.style.visibility='visible'
+    if (inputName) {                                    //if the value of the input field is truthy 
     createChild(inputName);                           // send the value to the created H1 element
 
     if(!savedNames.includes(inputName)){
@@ -50,6 +50,7 @@ button.addEventListener("click", (e) => {           // eventListener that target
     setStorage(savedNames); // + 
     popup.remove();
   }
+
  
 });
 
